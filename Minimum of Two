@@ -1,14 +1,19 @@
+#open the file containing the data
 f=open("C:\\Users\\HoratiuC\\Documents\\numbers.txt",'r+')
 nums = f.read().split('\n')
 
+#shows how many pairs 
 print ("This program calculates minimum of {} pairs of numbers".format(int(nums[0])))
 
+#remove first element
 l = nums[1:]
 
+#convert data to lists
 k=[]
 for i in l:
     k.append(i.split())
 
+#define empty list for the results
 answer=[]
 
 for x in range(0,len(k)):

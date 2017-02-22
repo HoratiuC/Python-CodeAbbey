@@ -1,34 +1,25 @@
+#define function to calculate BMI
 def bmi(weight, height):
     return weight/height**2
 
-a = bmi(80,1.73)
-
-def grades(n):
-    if n < 18.5:
-        print ("Underweight")
-    elif 18.5 <= n < 25.0:
-        print ("Normal")
-    elif 25.0 <= n < 30.0:
-        print ("Overweight")
-    else:
-        print ("Obesity")
-
+#read input file containing the data
 with open('C:\\Users\\HoratiuC\\Documents\\inputs.txt') as f:
     l = f.read().split('\n')
 
-
-
+#define empty list to append data except first element which represents the number of inputs
 wt_ht = []
 for i in l[1:]:
     wt_ht.append(i.split())
 
+#define empty list to append results
 res = []
 
-
+#append the BMI results
 for x in range(len(wt_ht)):
     a = bmi(float(wt_ht[x][0]),float(wt_ht[x][1]))
     res.append(a)
 
+#define empty list to append the results in final format (strings)
 final = []
 
 for r in res:
@@ -45,11 +36,9 @@ for r in res:
         r = 'obese'
         final.append(r)
     
+#write results to file
 with open('C:\\Users\\HoratiuC\\Documents\\test.txt','w') as t:
     print ("This program calculates BMI for {} people".format(l[0]))
     for fin in final:
         t.write('{} '.format(str(fin)))
     
-
-
-

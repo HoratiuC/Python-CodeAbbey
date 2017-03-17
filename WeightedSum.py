@@ -1,4 +1,4 @@
-with open("C:\\Users\\HoratiuC\\Documents\\diverse\\prog\\inputs.txt",'r+') as f:
+with open("inputs.txt",'r+') as f:
     l = f.read().split('\n')
 
 print ("Sum of digits for {} numbers".format(int(l[0])))

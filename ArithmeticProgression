@@ -1,0 +1,17 @@
+with open("inputs.txt","r") as f:
+   l = f.read().split('\n')
+
+print ("Arithmetic progression for {} rows".format(l[0]))
+
+l = [i.split() for i in l[1:]]
+
+res = []
+s = 0
+
+for i in range(len(l)):        
+    a, b, n = int(l[i][0]), int(l[i][1]), int(l[i][2])
+    s = int(a*n + b*n*(n-1)/2)
+    res.append(str(s))    
+    
+print (' '.join(res))
+        

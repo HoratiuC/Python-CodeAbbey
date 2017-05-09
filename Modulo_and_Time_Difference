@@ -1,0 +1,23 @@
+with open('inputs.txt') as f:
+    l = f.read().split('\n')
+
+l = [i.split() for i in l[1:]]
+
+d1,d2,dif,d,h,m,s = 0,0,0,0,0,0,0
+days,hours, minutes, seconds = 0,0,0,0
+res=[]
+for i in range(len(l)):
+    d1 = int(l[i][0])*86400+int(l[i][1])*3600+int(l[i][2])*60+int(l[i][3])
+    d2 = int(l[i][4])*86400+int(l[i][5])*3600+int(l[i][6])*60+int(l[i][7])
+    dif = d2-d1
+    days = dif // 86400
+    d = dif % 86400
+    hours = d//3600
+    h = d % 3600
+    minutes = h // 60
+    m = h % 60
+    seconds = m % 60
+    res.append((days,hours,minutes,seconds))
+
+with open('results.txt','a') as r:
+    r.write('{} '.format(res))
